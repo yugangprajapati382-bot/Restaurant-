@@ -36,21 +36,21 @@ function Lix() {
 
   const services = [
     {
-      number: "1",
+      number: one,
       image: one,
       title: "Responsive Assistance",
       description:
         "From inquiries to troubleshooting, our support team is here for you.",
     },
     {
-      number: "2",
+      number: two,
       image: two,
       title: "Tailored Solutions",
       description:
         "Our experts understand your unique requirements, delivering solutions.",
     },
     {
-      number: "3",
+      number: three,
       image: three,
       title: "Continuous Delight",
       description:
