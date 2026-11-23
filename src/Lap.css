@@ -1,0 +1,175 @@
+
+.lap-section {
+  width: 100%;
+  min-height: 380px;
+  background: #e78391;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 70px 11%;
+  box-sizing: border-box;
+}
+
+.lap-content {
+  position: relative;
+  z-index: 2;
+}
+
+.lap-subtitle {
+  display: block;
+  color: #ffffff;
+  font-family: cursive;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: all 0.4s ease;
+}
+
+.lap-title {
+  color: #ffffff;
+  font-size: 58px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.4s ease;
+}
+
+.lap-title:hover {
+  transform: translateX(12px);
+  color: #fff0f2;
+  text-shadow: 0 8px 20px rgba(100, 30, 45, 0.15);
+}
+
+.lap-subtitle:hover {
+  transform: translateX(8px);
+  letter-spacing: 1px;
+}
+
+.lap-leaves {
+  position: absolute;
+  width: 350px;
+  height: 100%;
+  top: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  transition: transform 1s ease;
+}
+
+.lap-leaves-left {
+  left: -100px;
+  background:
+    repeating-radial-gradient(
+      ellipse at 10% 20%,
+      transparent 0 12px,
+      #a94359 13px 15px,
+      transparent 16px 28px
+    );
+  transform: rotate(-25deg);
+}
+
+.lap-leaves-right {
+  right: -100px;
+  background:
+    repeating-radial-gradient(
+      ellipse at 90% 30%,
+      transparent 0 12px,
+      #a94359 13px 15px,
+      transparent 16px 28px
+    );
+  transform: rotate(25deg);
+}
+
+.lap-section:hover .lap-leaves-left {
+  transform: rotate(-15deg) translateX(15px);
+}
+
+.lap-section:hover .lap-leaves-right {
+  transform: rotate(15deg) translateX(-15px);
+}
+
+.lap-reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.lap-reveal.lap-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lap-title.lap-reveal {
+  transition:
+    opacity 0.9s ease,
+    transform 0.4s ease,
+    color 0.4s ease,
+    text-shadow 0.4s ease;
+}
+
+.lap-subtitle.lap-reveal {
+  transition:
+    opacity 0.9s ease,
+    transform 0.4s ease,
+    letter-spacing 0.4s ease;
+}
+
+.lap-subtitle.lap-show {
+  transition-delay: 0.1s;
+}
+
+.lap-title.lap-show {
+  transition-delay: 0.25s;
+}
+
+@media (max-width: 768px) {
+  .lap-section {
+    min-height: 300px;
+    padding: 60px 7%;
+  }
+
+  .lap-title {
+    font-size: 45px;
+  }
+
+  .lap-subtitle {
+    font-size: 18px;
+  }
+
+  .lap-leaves {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lap-section {
+    min-height: 250px;
+    padding: 50px 25px;
+  }
+
+  .lap-title {
+    font-size: 36px;
+  }
+
+  .lap-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lap-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .lap-section *,
+  .lap-section *::before,
+  .lap-section *::after {
+    transition-duration: 0.01ms;
+  }
+}

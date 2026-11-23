@@ -1,0 +1,113 @@
+
+.word-section {
+  width: 100%;
+  min-height: 425px;
+  background-color: #e78391;
+  background-image:
+    linear-gradient(rgba(231, 131, 145, 0.90), rgba(231, 131, 145, 0.90)),
+    url("https://www.transparenttextures.com/patterns/leaf.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.word-container {
+  width: 100%;
+  max-width: 1650px;
+  margin: auto;
+  padding: 60px 6.3%;
+  position: relative;
+  z-index: 2;
+}
+
+.word-subtitle {
+  color: white;
+  font-family: cursive;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 22px;
+  letter-spacing: 1px;
+  transition: transform 0.4s ease;
+}
+
+.word-subtitle:hover {
+  transform: translateX(10px);
+}
+
+.word-title {
+  color: white;
+  font-size: 65px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+  display: inline-block;
+  transition: transform 0.4s ease, letter-spacing 0.4s ease;
+}
+
+.word-title:hover {
+  transform: translateX(12px);
+  letter-spacing: 2px;
+}
+
+.word-reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.word-reveal.word-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.word-title.word-reveal {
+  transition-delay: 0.2s;
+}
+
+.word-subtitle.word-reveal {
+  transition-delay: 0.1s;
+}
+
+@media (max-width: 768px) {
+  .word-section {
+    min-height: 320px;
+  }
+
+  .word-container {
+    padding: 50px 7%;
+  }
+
+  .word-subtitle {
+    font-size: 19px;
+  }
+
+  .word-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .word-section {
+    min-height: 260px;
+  }
+
+  .word-subtitle {
+    font-size: 16px;
+  }
+
+  .word-title {
+    font-size: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

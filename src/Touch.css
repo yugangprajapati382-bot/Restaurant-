@@ -1,0 +1,260 @@
+.touch-section {
+  width: 100%;
+  min-height: 850px;
+  padding: 110px 20px;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("./clear-02.jpg");
+}
+.touch-section::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  bottom: 0;
+  width: 270px;
+  height: 420px;
+  background:
+    radial-gradient(ellipse at 30% 20%, #176735 0 20%, transparent 21%),
+    radial-gradient(ellipse at 70% 45%, #39894c 0 20%, transparent 21%),
+    radial-gradient(ellipse at 30% 70%, #176735 0 20%, transparent 21%);
+  opacity: 0.7;
+  transform: rotate(20deg);
+  pointer-events: none;
+  animation: leafFloat 7s ease-in-out infinite;
+}
+
+.touch-heading {
+  text-align: center;
+  max-width: 750px;
+  margin-bottom: 85px;
+  position: relative;
+  z-index: 2;
+  animation: headingAppear 1s ease forwards;
+}
+
+.touch-heading p {
+  font-family: cursive;
+  color: #858585;
+  font-size: 22px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.touch-heading h1 {
+  color: #333;
+  font-size: 40px;
+  font-weight: 800;
+  margin: 0 0 22px;
+  transition: color 0.3s ease;
+}
+
+.touch-heading h1:hover {
+  color: #39aab3;
+}
+
+.touch-heading span {
+  display: block;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Form */
+.touch-form {
+  width: 100%;
+  max-width: 770px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  position: relative;
+  z-index: 2;
+  animation: formAppear 1.2s ease forwards;
+}
+
+/* Name and Surname */
+.touch-input-row {
+  display: flex;
+  gap: 23px;
+}
+
+.touch-form input,
+.touch-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  outline: none;
+  padding: 14px 19px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #fff;
+  color: #333;
+  transition: all 0.35s ease;
+}
+
+.touch-form input {
+  height: 49px;
+}
+
+.touch-form textarea {
+  height: 192px;
+  resize: vertical;
+}
+
+/* Placeholder */
+.touch-form input::placeholder,
+.touch-form textarea::placeholder {
+  color: #b5b5b5;
+}
+
+/* Input Hover */
+.touch-form input:hover,
+.touch-form textarea:hover {
+  border-color: #64bbc2;
+  box-shadow: 0 4px 15px rgba(54, 169, 178, 0.08);
+}
+
+/* Input Focus */
+.touch-form input:focus,
+.touch-form textarea:focus {
+  border-color: #36aab4;
+  box-shadow: 0 0 0 3px rgba(54, 170, 180, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Send Button */
+.touch-button {
+  width: 100%;
+  height: 43px;
+  border: none;
+  border-radius: 30px;
+  background: #64bbc2;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.touch-button:hover {
+  background: #299eaa;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(54, 169, 178, 0.3);
+}
+
+.touch-button:active {
+  transform: scale(0.97);
+}
+
+.touch-arrow {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.touch-button:hover .touch-arrow {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* Success Message */
+.touch-success {
+  text-align: center;
+  color: #299eaa;
+  font-size: 15px;
+  font-weight: bold;
+  animation: headingAppear 0.5s ease;
+}
+
+/* Animations */
+@keyframes headingAppear {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes formAppear {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leafFloat {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -18px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .touch-section {
+    min-height: auto;
+    padding: 75px 20px;
+  }
+
+  .touch-heading {
+    margin-bottom: 50px;
+  }
+
+  .touch-heading h1 {
+    font-size: 32px;
+  }
+
+  .touch-heading p {
+    font-size: 19px;
+  }
+
+  .touch-input-row {
+    flex-direction: column;
+    gap: 23px;
+  }
+
+  .touch-form {
+    max-width: 100%;
+  }
+
+  .touch-section::before {
+    opacity: 0.3;
+  }
+
+  .touch-section::after {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .touch-heading h1 {
+    font-size: 27px;
+  }
+
+  .touch-heading span {
+    font-size: 14px;
+  }
+
+  .touch-form textarea {
+    height: 160px;
+  }
+}

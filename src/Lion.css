@@ -1,0 +1,330 @@
+
+/* Main Page */
+
+.lion-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #303030;
+}
+
+/* Header */
+
+.lion-header {
+  min-height: 355px;
+  background: linear-gradient(120deg, #72c3c7, #62b9be, #79c5c8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.lion-header::before,
+.lion-header::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  animation: lionFloat 8s ease-in-out infinite;
+}
+
+.lion-header::before {
+  top: -170px;
+  left: -70px;
+}
+
+.lion-header::after {
+  bottom: -200px;
+  right: -50px;
+  animation-delay: 2s;
+}
+
+.lion-header-content {
+  position: relative;
+  z-index: 2;
+  animation: lionFadeDown 1s ease forwards;
+}
+
+.lion-header h1 {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.lion-header p {
+  color: white;
+  font-size: 16px;
+  max-width: 600px;
+  line-height: 1.7;
+  margin: auto;
+}
+
+/* Blog Section */
+
+.lion-blog-section {
+  padding: 115px 30px;
+  background: #ffffff;
+}
+
+.lion-blog-container {
+  max-width: 1240px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 65px 28px;
+}
+
+/* Blog Card */
+
+.lion-card {
+  background: white;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.lion-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Scroll Animation */
+
+.lion-reveal {
+  opacity: 0;
+  transform: translateY(70px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+  transition-delay: var(--delay);
+}
+
+.lion-reveal.lion-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Blog Images */
+
+.lion-image-box {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  background: #f4eeee;
+}
+
+.lion-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.lion-card:hover .lion-image-box img {
+  transform: scale(1.09);
+}
+
+/* Image Hover Overlay */
+
+.lion-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(52, 173, 182, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lion-card:hover .lion-image-overlay {
+  opacity: 1;
+}
+
+.lion-image-overlay span {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid white;
+  padding: 12px 25px;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.lion-card:hover .lion-image-overlay span {
+  transform: translateY(0);
+}
+
+/* Card Content */
+
+.lion-card-content {
+  padding: 20px 0;
+}
+
+.lion-card-content h2 {
+  font-size: 23px;
+  margin-bottom: 20px;
+  color: #333333;
+  transition: color 0.3s ease;
+}
+
+.lion-card:hover h2 {
+  color: #36aeb8;
+}
+
+.lion-card-content p {
+  color: #555555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+/* Date and Category */
+
+.lion-details {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  color: #888888;
+  font-size: 15px;
+}
+
+.lion-details span {
+  transition: color 0.3s ease;
+}
+
+.lion-details span:hover {
+  color: #36aeb8;
+}
+
+.lion-details i {
+  color: #62b9be;
+  font-style: normal;
+  margin-right: 8px;
+}
+
+/* Read More Button */
+
+.lion-button {
+  margin-top: 22px;
+  background: #64b9c1;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.lion-button span {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.lion-button:hover {
+  background: #329fa9;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(50, 159, 169, 0.25);
+}
+
+.lion-button:hover span {
+  transform: translateX(6px);
+}
+
+/* Floating Animation */
+
+@keyframes lionFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(25px) rotate(15deg);
+  }
+}
+
+/* Header Animation */
+
+@keyframes lionFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+  .lion-blog-container {
+    gap: 45px 20px;
+  }
+
+  .lion-image-box {
+    height: 280px;
+  }
+
+  .lion-header h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .lion-blog-section {
+    padding: 65px 20px;
+  }
+
+  .lion-blog-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .lion-image-box {
+    height: 260px;
+  }
+
+  .lion-header {
+    min-height: 280px;
+    padding: 30px 20px;
+  }
+
+  .lion-header h1 {
+    font-size: 34px;
+  }
+
+  .lion-header p {
+    font-size: 14px;
+  }
+
+  .lion-details {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+/* Reduced Motion Support */
+
+@media (prefers-reduced-motion: reduce) {
+  .lion-page *,
+  .lion-page *::before,
+  .lion-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .lion-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

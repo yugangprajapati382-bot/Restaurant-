@@ -1,0 +1,290 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.build-section {
+  position: relative;
+  width: 100%;
+  min-height: 850px;
+  height: 100vh;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* LEAF BACKGROUND */
+
+.build-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* LEFT HEADING */
+
+.build-heading {
+  position: absolute;
+  left: 6.5%;
+  top: 35%;
+  width: 32%;
+  z-index: 3;
+}
+
+.build-heading p {
+  font-size: 23px;
+  color: #85817d;
+  font-family: cursive;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.build-heading h1 {
+  font-size: clamp(65px, 6vw, 110px);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #363636;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* CENTER CYLINDER IMAGE */
+
+.build-image-one {
+  position: absolute;
+  width: 29%;
+  height: 100%;
+  left: 36%;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 50% / 25%;
+}
+
+.build-image-one img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  transition: transform 0.6s ease;
+}
+
+.build-image-one:hover img {
+  transform: scale(1.06);
+}
+
+/* RIGHT CYLINDER IMAGE */
+
+.build-image-two {
+  position: absolute;
+  width: 29%;
+  height: 85%;
+  right: 8%;
+  top: 10%;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 50% / 25%;
+}
+
+.build-image-two img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  transition: transform 0.6s ease;
+}
+
+.build-image-two:hover img {
+  transform: scale(1.06);
+}
+
+/* BOTTOM INFORMATION BOX */
+
+.build-info {
+  position: absolute;
+  left: 5.5%;
+  bottom: 7%;
+  width: 41%;
+  min-height: 190px;
+  background: #66b9bf;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 35px 45px;
+  z-index: 4;
+  transition: all 0.4s ease;
+}
+
+.build-info:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* SMALL IMAGE */
+
+.build-small-image {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.build-small-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.build-small-image:hover img {
+  transform: scale(1.12);
+}
+
+/* INFORMATION CONTENT */
+
+.build-info-content {
+  flex: 1;
+  color: white;
+}
+
+.build-info-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 19px;
+  white-space: nowrap;
+}
+
+.build-dots {
+  flex: 1;
+  border-bottom: 1px dotted white;
+}
+
+.build-info-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 18px;
+}
+
+/* SCROLL ANIMATION */
+
+.build-reveal {
+  opacity: 0;
+  transform: translateY(55px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.build-reveal.build-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 1000px) {
+
+  .build-section {
+    min-height: 750px;
+  }
+
+  .build-heading {
+    left: 4%;
+    top: 30%;
+  }
+
+  .build-heading h1 {
+    font-size: 65px;
+  }
+
+  .build-image-one {
+    left: 34%;
+    width: 32%;
+  }
+
+  .build-image-two {
+    right: 3%;
+    width: 30%;
+  }
+
+  .build-info {
+    width: 52%;
+    left: 3%;
+    padding: 25px;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 650px) {
+
+  .build-section {
+    height: auto;
+    min-height: 1100px;
+  }
+
+  .build-background {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .build-heading {
+    position: absolute;
+    top: 65px;
+    left: 7%;
+    width: 85%;
+  }
+
+  .build-heading h1 {
+    font-size: 65px;
+  }
+
+  .build-heading p {
+    font-size: 17px;
+  }
+
+  .build-image-one {
+    top: 330px;
+    left: 5%;
+    width: 52%;
+    height: 480px;
+  }
+
+  .build-image-two {
+    top: 420px;
+    right: 3%;
+    width: 45%;
+    height: 400px;
+  }
+
+  .build-info {
+    left: 5%;
+    bottom: 35px;
+    width: 90%;
+    min-height: 160px;
+    padding: 18px;
+    gap: 15px;
+  }
+
+  .build-small-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .build-info-title {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .build-info-content p {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,419 @@
+.job-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.job-banner h1 {
+  color: white;
+  font-size: 52px;
+  animation: jobFadeDown 1s ease;
+  z-index: 1;
+  transition: 0.4s;
+}
+
+.job-banner h1:hover {
+  letter-spacing: 5px;
+}
+
+/* Product Section */
+
+.job-product {
+  max-width: 1250px;
+  margin: 110px auto 70px;
+  padding: 0 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.job-product-image {
+  overflow: hidden;
+  background: #f5dfe2;
+  animation: jobFadeLeft 1s ease;
+}
+
+.job-product-image img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.job-product-image:hover img {
+  transform: scale(1.07);
+}
+
+.job-product-info {
+  animation: jobFadeRight 1s ease;
+}
+
+.job-small-heading {
+  color: #777;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.job-product-info h2 {
+  font-size: 45px;
+  margin: 15px 0;
+  color: #333;
+  transition: 0.3s;
+}
+
+.job-product-info h2:hover {
+  color: #62b9c0;
+  transform: translateX(8px);
+}
+
+.job-price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #62b9c0;
+  margin-bottom: 25px;
+}
+
+.job-price del {
+  color: #a6d5d8;
+}
+
+.job-product-info > p {
+  line-height: 1.9;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Quantity */
+
+.job-quantity {
+  display: flex;
+  align-items: center;
+  margin: 30px 0 18px;
+  gap: 8px;
+}
+
+.job-quantity button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: #f3f3f3;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.job-quantity button:hover {
+  background: #62b9c0;
+  color: white;
+}
+
+.job-quantity input {
+  width: 65px;
+  height: 42px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+/* Add Cart Button */
+
+.job-cart-btn {
+  background: #65bac1;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.35s ease;
+}
+
+.job-cart-btn:hover {
+  background: #333;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.job-cart-message {
+  color: #35aab2 !important;
+  font-weight: bold;
+}
+
+.job-category {
+  margin-top: 35px;
+  border-bottom: 1px solid #eee;
+}
+
+.job-category p {
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  color: #555;
+}
+
+/* Description */
+
+.job-description {
+  max-width: 1250px;
+  margin: 70px auto;
+  padding: 0 25px;
+  animation: jobFadeUp 1s ease;
+}
+
+.job-description h2,
+.job-related h2 {
+  font-size: 38px;
+  margin-bottom: 25px;
+}
+
+.job-description p {
+  color: #555;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+/* Related Products */
+
+.job-related {
+  max-width: 1250px;
+  margin: 90px auto;
+  padding: 0 25px;
+}
+
+.job-related h2 {
+  animation: jobFadeUp 1s ease;
+}
+
+.job-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.job-related-card {
+  position: relative;
+  animation: jobFadeUp 0.8s ease both;
+  transition: transform 0.4s ease;
+}
+
+.job-related-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.job-related-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.job-related-card:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.job-related-card:hover {
+  transform: translateY(-10px);
+}
+
+.job-related-image {
+  width: 100%;
+  height: 310px;
+  position: relative;
+  overflow: hidden;
+  background: #f5dfe2;
+}
+
+.job-related-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.job-related-card:hover .job-related-image img {
+  transform: scale(1.09);
+}
+
+.job-sale {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 10px 17px;
+  background: #35aab2;
+  color: white;
+  font-size: 13px;
+}
+
+.job-related-card h3 {
+  font-size: 20px;
+  margin-top: 22px;
+  transition: color 0.3s;
+}
+
+.job-related-card:hover h3 {
+  color: #62b9c0;
+}
+
+.job-related-price {
+  display: flex;
+  gap: 8px;
+  color: #62b9c0;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.job-related-price del {
+  color: #999;
+}
+
+.job-related-card > button {
+  background: #65bac1;
+  color: white;
+  border: none;
+  padding: 13px 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.job-related-card > button:hover {
+  background: #333;
+  transform: translateY(-4px);
+}
+
+.job-cart-total {
+  margin-top: 30px;
+  color: #35aab2;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Animations */
+
+@keyframes jobFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes jobFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes jobFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes jobFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes jobRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+  .job-product {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+  .job-product-image img {
+    height: 450px;
+  }
+
+  .job-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .job-banner {
+    min-height: 280px;
+  }
+
+  .job-banner h1 {
+    font-size: 38px;
+  }
+
+  .job-product {
+    padding: 0 18px;
+    gap: 30px;
+  }
+
+  .job-product-image img {
+    height: 350px;
+  }
+
+  .job-product-info h2 {
+    font-size: 35px;
+  }
+
+  .job-price {
+    font-size: 26px;
+  }
+
+  .job-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-related-image {
+    height: 300px;
+  }
+
+  .job-description h2,
+  .job-related h2 {
+    font-size: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job-page *,
+  .job-page *::before,
+  .job-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,368 @@
+
+.lix-section {
+  width: 100%;
+  min-height: 850px;
+  padding: 115px 5% 65px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-image: url(./clear-02.jpg);
+  background-size: 100% 100%;
+}
+.lix-heading {
+  text-align: center;
+  margin-bottom: 85px;
+  position: relative;
+  z-index: 2;
+}
+
+.lix-heading h2 {
+  font-size: 43px;
+  font-weight: 800;
+  color: #383838;
+  margin: 0 0 18px;
+  transition: color 0.4s ease;
+}
+
+.lix-heading h2:hover {
+  color: #63b9c1;
+}
+
+.lix-heading p {
+  font-family: cursive;
+  font-size: 21px;
+  color: #888888;
+  margin: 0;
+  transition: letter-spacing 0.4s ease;
+}
+
+.lix-heading p:hover {
+  letter-spacing: 2px;
+}
+
+/* Main cards */
+
+.lix-container {
+  max-width: 1350px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px;
+  position: relative;
+  z-index: 2;
+}
+
+.lix-card {
+  text-align: center;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.lix-card-2 {
+  margin-top: 40px;
+}
+
+.lix-card:hover {
+  transform: translateY(-12px);
+}
+
+/* Images */
+
+.lix-image-box {
+  width: 190px;
+  height: 190px;
+  margin: 0 auto 40px;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.lix-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease, filter 0.5s ease;
+}
+
+.lix-card:hover .lix-image-box img {
+  transform: scale(1.1) rotate(2deg);
+  filter: brightness(1.05);
+}
+
+/* Number badge */
+
+.lix-number {
+  position: absolute;
+  top: -20px;
+  left: -25px;
+  width: 42px;
+  height: 45px;
+  background: #65bac2;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.lix-card-2 .lix-number {
+  background: #e98291;
+}
+
+.lix-card:hover .lix-number {
+  transform: rotate(360deg);
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Card content */
+
+.lix-card-content h3 {
+  font-size: 23px;
+  color: #383838;
+  font-weight: 800;
+  margin: 0 0 22px;
+  transition: color 0.4s ease;
+}
+
+.lix-card:hover .lix-card-content h3 {
+  color: #62b8c0;
+}
+
+.lix-card-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444444;
+  max-width: 390px;
+  margin: auto;
+  transition: color 0.4s ease;
+}
+
+/* Button */
+
+.lix-button-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.lix-button {
+  width: 165px;
+  height: 46px;
+  background: #65bac2;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+}
+
+.lix-button span {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.lix-button:hover {
+  background: #e98291;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.lix-button:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Decorative leaves */
+
+.lix-leaf {
+  position: absolute;
+  width: 210px;
+  height: 350px;
+  opacity: 0.18;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    65deg,
+    transparent 0px,
+    transparent 12px,
+    #438b46 14px,
+    transparent 17px
+  );
+  border-radius: 50%;
+  transition: transform 1s ease;
+}
+
+.lix-leaf-left {
+  left: -120px;
+  top: 50px;
+  transform: rotate(-25deg);
+}
+
+.lix-leaf-right {
+  right: -120px;
+  bottom: 0;
+  transform: rotate(25deg);
+}
+
+.lix-section:hover .lix-leaf-left {
+  transform: rotate(-10deg) translateX(15px);
+}
+
+.lix-section:hover .lix-leaf-right {
+  transform: rotate(10deg) translateX(-15px);
+}
+
+/* Scroll animation */
+
+.lix-reveal {
+  opacity: 0;
+  transform: translateY(55px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+  transition-delay: var(--delay, 0s);
+}
+
+.lix-reveal.lix-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lix-card-2.lix-reveal {
+  transform: translateY(95px);
+}
+
+.lix-card-2.lix-reveal.lix-show {
+  transform: translateY(40px);
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .lix-section {
+    padding: 80px 30px;
+  }
+
+  .lix-heading {
+    margin-bottom: 65px;
+  }
+
+  .lix-heading h2 {
+    font-size: 35px;
+  }
+
+  .lix-container {
+    gap: 25px;
+  }
+
+  .lix-image-box {
+    width: 160px;
+    height: 160px;
+  }
+
+  .lix-card-content h3 {
+    font-size: 19px;
+  }
+
+  .lix-card-content p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .lix-section {
+    padding: 65px 20px;
+  }
+
+  .lix-heading {
+    margin-bottom: 55px;
+  }
+
+  .lix-heading h2 {
+    font-size: 29px;
+  }
+
+  .lix-heading p {
+    font-size: 17px;
+  }
+
+  .lix-container {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .lix-card-2 {
+    margin-top: 0;
+  }
+
+  .lix-card-2.lix-reveal,
+  .lix-card-2.lix-reveal.lix-show {
+    transform: translateY(0);
+  }
+
+  .lix-image-box {
+    width: 190px;
+    height: 190px;
+    margin-bottom: 30px;
+  }
+
+  .lix-card-content h3 {
+    font-size: 21px;
+  }
+
+  .lix-card-content p {
+    font-size: 15px;
+  }
+
+  .lix-button-box {
+    margin-top: 55px;
+  }
+
+  .lix-leaf {
+    width: 120px;
+    height: 250px;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 380px) {
+  .lix-heading h2 {
+    font-size: 25px;
+  }
+
+  .lix-image-box {
+    width: 165px;
+    height: 165px;
+  }
+
+  .lix-card-content h3 {
+    font-size: 19px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .lix-reveal,
+  .lix-card-2.lix-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

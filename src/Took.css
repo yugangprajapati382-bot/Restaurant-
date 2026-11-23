@@ -1,0 +1,237 @@
+
+.took-section {
+  width: 100%;
+  min-height: 380px;
+  background: #e98491;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 80px 11%;
+  isolation: isolate;
+}
+
+.took-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.04),
+    transparent 50%,
+    rgba(255, 255, 255, 0.08)
+  );
+  z-index: -1;
+}
+
+.took-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.took-show .took-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.took-subtitle {
+  color: white;
+  font-size: 23px;
+  font-family: cursive;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.took-show .took-subtitle {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.took-title {
+  color: white;
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  cursor: default;
+  display: inline-block;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.8s ease 0.4s,
+    transform 0.8s ease 0.4s,
+    letter-spacing 0.4s ease,
+    text-shadow 0.4s ease;
+}
+
+.took-show .took-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.took-title:hover {
+  letter-spacing: 2px;
+  text-shadow: 3px 5px 15px rgba(120, 40, 60, 0.2);
+}
+
+.took-line {
+  width: 0;
+  height: 4px;
+  background: white;
+  margin-top: 18px;
+  border-radius: 10px;
+  transition: width 0.8s ease 0.8s;
+}
+
+.took-show .took-line {
+  width: 75px;
+}
+
+/* Decorative leaves */
+
+.took-leaf {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 1.5s ease;
+}
+
+.took-leaf svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  stroke: #bd596b;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.23;
+}
+
+.took-leaf-left {
+  left: -40px;
+  top: -10px;
+  transform: translateX(-70px) rotate(-15deg);
+}
+
+.took-leaf-right {
+  right: -40px;
+  top: -10px;
+  transform: translateX(70px) rotate(15deg);
+}
+
+.took-show .took-leaf-left {
+  opacity: 1;
+  transform: translateX(0) rotate(0);
+}
+
+.took-show .took-leaf-right {
+  opacity: 1;
+  transform: translateX(0) rotate(0);
+}
+
+/* Leaf hover animation */
+
+.took-section:hover .took-leaf-left {
+  transform: rotate(5deg);
+}
+
+.took-section:hover .took-leaf-right {
+  transform: rotate(-5deg);
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .took-section {
+    min-height: 330px;
+    padding: 70px 8%;
+  }
+
+  .took-title {
+    font-size: 48px;
+  }
+
+  .took-subtitle {
+    font-size: 20px;
+  }
+
+  .took-leaf {
+    width: 230px;
+    height: 330px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .took-section {
+    min-height: 270px;
+    padding: 65px 7%;
+  }
+
+  .took-title {
+    font-size: 38px;
+  }
+
+  .took-subtitle {
+    font-size: 17px;
+  }
+
+  .took-leaf {
+    width: 150px;
+    height: 250px;
+  }
+
+  .took-leaf-left {
+    left: -65px;
+  }
+
+  .took-leaf-right {
+    right: -65px;
+  }
+
+  .took-line {
+    height: 3px;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 360px) {
+  .took-title {
+    font-size: 32px;
+  }
+
+  .took-subtitle {
+    font-size: 15px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .took-content,
+  .took-subtitle,
+  .took-title,
+  .took-leaf,
+  .took-line {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .took-line {
+    width: 75px;
+  }
+}

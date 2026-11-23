@@ -1,0 +1,394 @@
+
+.door-section {
+  width: 100%;
+  min-height: 750px;
+  padding: 100px 30px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+}
+
+.door-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 75px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Images */
+
+.door-images {
+  display: grid;
+  grid-template-columns: 1fr 0.88fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.door-image-box {
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.door-image-one {
+  height: 470px;
+  transform: translateX(-60px);
+  transition-delay: 0.2s;
+}
+
+.door-image-two {
+  height: 575px;
+  transform: translateY(60px);
+  transition-delay: 0.4s;
+}
+
+.door-show .door-image-box {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.door-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.door-image-box:hover img {
+  transform: scale(1.09);
+}
+
+/* Content */
+
+.door-content {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 1s ease 0.3s;
+}
+
+.door-show .door-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.door-subtitle {
+  color: #888888;
+  font-family: cursive;
+  font-size: 21px;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  transition: color 0.3s ease;
+}
+
+.door-subtitle:hover {
+  color: #65b9c0;
+}
+
+.door-heading {
+  color: #383838;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  display: inline-block;
+  transition: all 0.4s ease;
+}
+
+.door-heading:hover {
+  color: #e98491;
+  transform: translateX(7px);
+}
+
+.door-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444444;
+  margin-bottom: 25px;
+  max-width: 650px;
+}
+
+/* Progress bars */
+
+.door-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.door-progress-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  transition-delay: var(--delay);
+}
+
+.door-show .door-progress-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.door-progress-item p {
+  font-size: 16px;
+  color: #383838;
+  margin-bottom: 10px;
+}
+
+.door-progress-bg {
+  width: 100%;
+  height: 11px;
+  background: #f2f0ee;
+  overflow: hidden;
+}
+
+.door-progress-fill {
+  height: 100%;
+  width: 0;
+  transition: width 1.5s ease;
+  transition-delay: 1s;
+}
+
+.door-show .door-progress-fill {
+  width: var(--progress);
+}
+
+.door-progress-fill.pink {
+  background: #e98491;
+}
+
+.door-progress-fill.blue {
+  background: #65b9c0;
+}
+
+/* Button */
+
+.door-button {
+  min-width: 183px;
+  height: 46px;
+  padding: 0 25px;
+  background: #65b9c0;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+
+  transition: all 0.4s ease;
+}
+
+.door-button span {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.door-button:hover {
+  background: #e98491;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(233, 132, 145, 0.25);
+}
+
+.door-button:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Decorative leaves */
+
+.door-leaf {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: all 1.5s ease;
+}
+
+.door-leaf svg {
+  width: 100%;
+  height: 100%;
+  fill: #34834b;
+  stroke: #34834b;
+  stroke-width: 3;
+  opacity: 0.8;
+  stroke-linecap: round;
+}
+
+.door-leaf-top {
+  top: -100px;
+  right: -70px;
+  transform: rotate(45deg) translateY(-50px);
+}
+
+.door-leaf-bottom {
+  bottom: -110px;
+  left: -75px;
+  transform: rotate(220deg) translateY(50px);
+}
+
+.door-show .door-leaf {
+  opacity: 0.85;
+}
+
+.door-show .door-leaf-top {
+  transform: rotate(45deg) translateY(0);
+}
+
+.door-show .door-leaf-bottom {
+  transform: rotate(220deg) translateY(0);
+}
+
+.door-section:hover .door-leaf-top {
+  transform: rotate(55deg) scale(1.08);
+}
+
+.door-section:hover .door-leaf-bottom {
+  transform: rotate(210deg) scale(1.08);
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .door-section {
+    padding: 80px 30px;
+  }
+
+  .door-container {
+    gap: 40px;
+  }
+
+  .door-images {
+    gap: 20px;
+  }
+
+  .door-image-one {
+    height: 380px;
+  }
+
+  .door-image-two {
+    height: 470px;
+  }
+
+  .door-heading {
+    font-size: 36px;
+  }
+
+  .door-description {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .door-section {
+    padding: 65px 22px;
+  }
+
+  .door-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .door-images {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .door-image-one {
+    height: 300px;
+  }
+
+  .door-image-two {
+    height: 370px;
+  }
+
+  .door-heading {
+    font-size: 34px;
+  }
+
+  .door-subtitle {
+    font-size: 18px;
+  }
+
+  .door-description {
+    font-size: 14px;
+  }
+
+  .door-progress-item p {
+    font-size: 14px;
+  }
+
+  .door-leaf {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 400px) {
+  .door-images {
+    gap: 10px;
+  }
+
+  .door-image-one {
+    height: 240px;
+  }
+
+  .door-image-two {
+    height: 300px;
+  }
+
+  .door-heading {
+    font-size: 30px;
+  }
+
+  .door-button {
+    height: 43px;
+    font-size: 11px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .door-section *,
+  .door-section *::before,
+  .door-section *::after {
+    transition-duration: 0.01ms;
+    animation-duration: 0.01ms;
+  }
+
+  .door-content,
+  .door-image-box,
+  .door-progress-item,
+  .door-leaf {
+    opacity: 1;
+    transform: none;
+  }
+
+  .door-progress-fill {
+    width: var(--progress);
+  }
+}

@@ -1,0 +1,328 @@
+
+.rich-section {
+  width: 100%;
+  padding: 5px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.rich-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 430px;
+}
+
+/* Cards */
+
+.rich-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Profile cards */
+
+.rich-profile {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.rich-profile-content {
+  padding: 25px;
+  transition: transform 0.4s ease;
+}
+
+.rich-profile:hover .rich-profile-content {
+  transform: translateY(-8px);
+}
+
+.rich-profile-content h2 {
+  font-size: 43px;
+  font-weight: 800;
+  color: #383838;
+  margin-bottom: 25px;
+  transition: color 0.3s ease;
+}
+
+.rich-profile:hover h2 {
+  color: #65b9c0;
+}
+
+.rich-profile-content p {
+  font-size: 15px;
+  color: #383838;
+  margin-bottom: 25px;
+}
+
+/* Contact button */
+
+.rich-button {
+  min-width: 172px;
+  height: 46px;
+  padding: 0 25px;
+  border-radius: 30px;
+  background: #65b9c0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.4s ease;
+}
+
+.rich-button span {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.rich-button:hover {
+  background: #e98491;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(233, 132, 145, 0.25);
+}
+
+.rich-button:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Team images */
+
+.rich-image {
+  background: #df8793;
+}
+
+.rich-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.rich-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.rich-image:hover img {
+  transform: scale(1.09);
+}
+
+.rich-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.45),
+    transparent 55%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.rich-image:hover .rich-image-overlay {
+  opacity: 1;
+}
+
+.rich-image-overlay span {
+  color: white;
+  font-size: 19px;
+  font-weight: 700;
+  transform: translateY(15px);
+  transition: transform 0.4s ease;
+}
+
+.rich-image:hover .rich-image-overlay span {
+  transform: translateY(0);
+}
+
+/* Teamwork card */
+
+.rich-feature {
+  background-color: #36b7bd;
+  background-image:
+    linear-gradient(rgba(45, 184, 190, 0.85), rgba(45, 184, 190, 0.85)),
+    url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+}
+
+.rich-feature-content {
+  width: 100%;
+  height: 100%;
+  background: #f7f5f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.rich-feature:hover .rich-feature-content {
+  transform: scale(0.94);
+  background: #ffffff;
+}
+
+.rich-feature-box h2 {
+  font-size: 25px;
+  color: #383838;
+  margin-bottom: 25px;
+  font-weight: 800;
+  transition: color 0.3s ease;
+}
+
+.rich-feature-box p {
+  font-size: 15px;
+  color: #444444;
+}
+
+.rich-feature:hover h2 {
+  color: #65b9c0;
+}
+
+/* Scroll animation */
+
+.rich-reveal {
+  opacity: 0;
+  transform: translateY(55px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+  transition-delay: var(--delay, 0s);
+}
+
+.rich-reveal.rich-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image hover */
+
+.rich-image-wrapper img {
+  will-change: transform;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .rich-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 400px;
+  }
+
+  .rich-profile-content h2 {
+    font-size: 36px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .rich-section {
+    padding: 5px;
+  }
+
+  .rich-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 260px;
+  }
+
+  .rich-profile-content {
+    padding: 12px;
+  }
+
+  .rich-profile-content h2 {
+    font-size: 23px;
+    margin-bottom: 12px;
+  }
+
+  .rich-profile-content p {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .rich-button {
+    min-width: 120px;
+    height: 38px;
+    padding: 0 12px;
+    font-size: 10px;
+  }
+
+  .rich-feature {
+    padding: 15px;
+  }
+
+  .rich-feature-box h2 {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  .rich-feature-box p {
+    font-size: 12px;
+  }
+
+  .rich-image-overlay {
+    padding: 12px;
+  }
+
+  .rich-image-overlay span {
+    font-size: 14px;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 380px) {
+  .rich-grid {
+    grid-auto-rows: 220px;
+  }
+
+  .rich-profile-content h2 {
+    font-size: 19px;
+  }
+
+  .rich-profile-content p {
+    font-size: 11px;
+  }
+
+  .rich-button {
+    min-width: 105px;
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rich-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .rich-card *,
+  .rich-card *::before,
+  .rich-card *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

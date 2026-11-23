@@ -1,0 +1,192 @@
+
+/* Main Shop Banner */
+.shop-banner {
+  width: 100%;
+  min-height: 365px;
+  background: #39b5bb;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Content */
+.shop-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+  padding: 30px 20px;
+
+  animation: shopFadeIn 1.2s ease forwards;
+}
+
+/* Heading */
+.shop-content h1 {
+  font-size: 54px;
+  font-weight: 800;
+  margin: 0 0 18px;
+  transition: all 0.4s ease;
+  cursor: default;
+}
+
+.shop-content h1:hover {
+  transform: scale(1.08);
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Description */
+.shop-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0 auto;
+  max-width: 650px;
+  transition: all 0.4s ease;
+}
+
+.shop-content p:hover {
+  letter-spacing: 0.3px;
+}
+
+/* Decorative Leaves */
+.shop-leaf {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  opacity: 0.12;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 10%,
+      #087d83 0%,
+      transparent 65%
+    );
+
+  border-radius: 50%;
+}
+
+/* Left Leaf */
+.shop-leaf-left {
+  left: -130px;
+  top: -100px;
+  transform: rotate(-30deg);
+  animation: leafMoveLeft 7s ease-in-out infinite;
+}
+
+/* Right Leaf */
+.shop-leaf-right {
+  right: -130px;
+  bottom: -120px;
+  transform: rotate(35deg);
+  animation: leafMoveRight 8s ease-in-out infinite;
+}
+
+/* Background Leaf Pattern */
+.shop-banner::before,
+.shop-banner::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(0, 105, 110, 0.10);
+  border-radius: 70% 0 70% 0;
+  pointer-events: none;
+}
+
+.shop-banner::before {
+  left: -130px;
+  top: -100px;
+  transform: rotate(25deg);
+}
+
+.shop-banner::after {
+  right: -130px;
+  bottom: -150px;
+  transform: rotate(205deg);
+}
+
+/* Entrance Animation */
+@keyframes shopFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Leaf Animations */
+@keyframes leafMoveLeft {
+  0%, 100% {
+    transform: translate(0, 0) rotate(-30deg);
+  }
+
+  50% {
+    transform: translate(20px, 15px) rotate(-20deg);
+  }
+}
+
+@keyframes leafMoveRight {
+  0%, 100% {
+    transform: translate(0, 0) rotate(35deg);
+  }
+
+  50% {
+    transform: translate(-20px, -15px) rotate(45deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .shop-banner {
+    min-height: 320px;
+  }
+
+  .shop-content h1 {
+    font-size: 43px;
+  }
+
+  .shop-content p {
+    font-size: 14px;
+    max-width: 480px;
+  }
+
+  .shop-break {
+    display: none;
+  }
+
+  .shop-leaf {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-banner {
+    min-height: 280px;
+  }
+
+  .shop-content h1 {
+    font-size: 36px;
+  }
+
+  .shop-content p {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shop-content,
+  .shop-leaf {
+    animation: none;
+  }
+}

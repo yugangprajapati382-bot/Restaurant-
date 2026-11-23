@@ -1,0 +1,264 @@
+
+.got-section {
+  width: 100%;
+  padding: 100px 6% 80px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.got-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.got-heading span {
+  font-family: cursive;
+  font-size: 21px;
+  color: #858585;
+  letter-spacing: 1px;
+}
+
+.got-heading h2 {
+  font-size: 44px;
+  color: #363636;
+  margin: 22px 0;
+  font-weight: 800;
+}
+
+.got-heading p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.got-container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.got-card {
+  background: #f7f5f3;
+  border: 1px solid #eaeaea;
+  min-height: 590px;
+  padding: 65px 35px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.5s ease, box-shadow 0.5s ease,
+    background 0.5s ease;
+}
+
+.got-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.got-card h3 {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0 25px;
+  font-weight: 700;
+}
+
+.got-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 35px;
+  color: #363636;
+}
+
+.got-dollar {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.got-price strong {
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.got-month {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.got-button {
+  border: none;
+  border-radius: 30px;
+  padding: 8px 25px;
+  background: #65bbc1;
+  color: white;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.got-button:hover {
+  background: #e78391;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.got-features {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.got-feature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  max-width: 265px;
+  margin: auto;
+  width: 100%;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.got-feature:hover {
+  transform: translateX(8px);
+}
+
+.got-feature span {
+  font-size: 23px;
+  font-weight: 800;
+  width: 20px;
+  text-align: center;
+}
+
+.got-check,
+.got-cross {
+  color: #111;
+}
+
+.got-feature p {
+  font-size: 17px;
+  color: #858585;
+  margin: 0;
+}
+
+.got-card h4 {
+  font-size: 15px;
+  color: #333;
+  margin-top: 32px;
+  font-weight: 800;
+}
+
+.got-featured {
+  background: #35a8b2;
+  color: white;
+  transform: translateY(-8px);
+}
+
+.got-featured h3,
+.got-featured .got-price,
+.got-featured .got-feature p,
+.got-featured h4 {
+  color: white;
+}
+
+.got-featured .got-check,
+.got-featured .got-cross {
+  color: white;
+}
+
+.got-featured .got-button {
+  background: #65bbc1;
+}
+
+.got-featured .got-button:hover {
+  background: #e78391;
+}
+
+.got-featured:hover {
+  transform: translateY(-18px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.got-reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition-delay: var(--delay, 0s);
+}
+
+.got-reveal.got-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.got-card.got-reveal:hover {
+  transform: translateY(-15px);
+}
+
+.got-card.got-featured.got-reveal:hover {
+  transform: translateY(-18px);
+}
+
+@media (max-width: 1000px) {
+  .got-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .got-featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .got-section {
+    padding: 65px 6%;
+  }
+
+  .got-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .got-heading h2 {
+    font-size: 32px;
+  }
+
+  .got-heading p {
+    font-size: 14px;
+  }
+
+  .got-card {
+    min-height: 550px;
+    padding: 50px 25px;
+  }
+
+  .got-price strong {
+    font-size: 55px;
+  }
+
+  .got-featured {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .got-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .got-card,
+  .got-feature,
+  .got-button {
+    transition: none;
+  }
+}

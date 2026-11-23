@@ -1,0 +1,203 @@
+
+/* Main Section */
+.roob-section {
+  width: 100%;
+  padding: 90px 25px 100px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container */
+.roob-container {
+  max-width: 1250px;
+  margin: auto;
+}
+
+/* Product Grid */
+.roob-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px 28px;
+}
+
+/* Product Card */
+.roob-card {
+  text-align: center;
+  animation: roobAppear 0.9s ease both;
+  animation-delay: var(--delay);
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.roob-card:hover {
+  transform: translateY(-9px);
+}
+
+/* Image Box */
+.roob-image-box {
+  width: 100%;
+  height: 400px;
+  background: #f4dfe1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Product Image */
+.roob-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.roob-card:hover .roob-image {
+  transform: scale(1.09);
+}
+
+/* Image Overlay */
+.roob-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 40, 40, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.roob-card:hover .roob-overlay {
+  opacity: 1;
+}
+
+/* View Button */
+.roob-view-btn {
+  background: #61b9c1;
+  color: white;
+  border: none;
+  padding: 13px 27px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+}
+
+.roob-card:hover .roob-view-btn {
+  transform: translateY(0);
+}
+
+.roob-view-btn:hover {
+  background: #299da8;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Details */
+.roob-details {
+  padding: 19px 10px 0;
+}
+
+.roob-details h3 {
+  color: #333333;
+  font-size: 23px;
+  font-weight: 750;
+  margin: 0 0 17px;
+  transition: color 0.3s ease;
+}
+
+.roob-card:hover .roob-details h3 {
+  color: #43aeb7;
+}
+
+/* Price */
+.roob-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  color: #888888;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.roob-price del {
+  color: #888888;
+}
+
+.roob-price span {
+  transition: color 0.3s ease;
+}
+
+.roob-card:hover .roob-price span {
+  color: #36aab4;
+}
+
+/* Entrance Animation */
+@keyframes roobAppear {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .roob-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 22px;
+  }
+
+  .roob-image-box {
+    height: 350px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .roob-section {
+    padding: 55px 18px;
+  }
+
+  .roob-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .roob-image-box {
+    height: 340px;
+  }
+
+  .roob-details h3 {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 380px) {
+  .roob-image-box {
+    height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roob-card {
+    animation: none;
+    transition: none;
+  }
+
+  .roob-image,
+  .roob-overlay,
+  .roob-view-btn {
+    transition: none;
+  }
+}
