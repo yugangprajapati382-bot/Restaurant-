@@ -1,5 +1,5 @@
 import React from 'react'
-import Took from './took';
+import Took from './Took';
 import Door from './Door';
 import Rich from './Rich';
 import Fan from './Fan';
